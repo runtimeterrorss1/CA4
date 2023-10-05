@@ -1,0 +1,19 @@
+
+services:
+  web: 
+    image: imageName
+    ports:
+      -"60:60"
+    depends_on:
+      - database
+    volumes:
+      -
+
+  database:
+    image: imageName
+    ports:
+      -"50:50"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      -
