@@ -6,7 +6,7 @@ module.exports = {
     console.log("API CALLED");
 
     axios
-      .post("http://other-service-url:port/api/endpoint", {
+      .post("http://localhost:5000/", {
         email: model.email,
         password: model.password,
       })
