@@ -1,5 +1,5 @@
 
-const userService = require("../Services/user.service");
+const userService = require("../Services/user.services");
 
 module.exports = {
   showUser: (req, res) => {
