@@ -9,7 +9,7 @@ def create_db_connection():
         host="127.0.0.1",
         user="root",
         password="lodesmain@21",
-        database="mlops1"
+        database="mlops1",
     )
 
 @app.route("/", methods=["GET", "POST"])
