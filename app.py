@@ -3,10 +3,9 @@ import mysql.connector
 
 app = Flask(__name__)
 
-# Create a function to establish a database connection
 def create_db_connection():
     return mysql.connector.connect(
-        host="127.0.0.1",
+        host="mysql-container",  
         user="root",
         password="lodesmain@21",
         database="mlops1",
