@@ -1,11 +1,10 @@
-name: Docker Image CI
+name: Docker Image Webserver
 
 on:
   push:
     branches: [ "i201826" ]
 
 jobs:
-
   build:
 
     runs-on: ubuntu-latest
