@@ -4,7 +4,6 @@ const app = express();
 const mysql = require("mysql");
 const ejs = require("ejs");
 
-// const userRoute = require("./Routes/user.route")
 app.set("view engine", "ejs");
 app.set("views", __dirname);
 
@@ -28,7 +27,6 @@ connection.connect((err) => {
   console.log("Connected to MySQL as id " + connection.threadId);
 });
 
-// app.use("/api/user", userRoute)
 
 app.get("/", (req, res) => {
   connection.query("SELECT * FROM user1", (err, results) => {
@@ -38,7 +36,6 @@ app.get("/", (req, res) => {
       return;
     }
 
-    // Render a webpage with the fetched data
     res.render("index", { data: results });
   });
 });
