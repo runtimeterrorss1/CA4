@@ -23,6 +23,4 @@ jobs:
 
     - name: Run MySQL container
       run: |
-        docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=lodesmain@21 -e MYSQL_DATABASE=mlops1 mysql:latest
-
-   
+        docker run -p runtimeterrorss1/ca4:latest
