@@ -1,0 +1,50 @@
+name: Initialize MySQL Database and Run Flask Application
+
+on:
+  push:
+    branches:
+      - i200634  # Specify the branch name you want to trigger the workflow for
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Build Docker image
+      run: docker build -t flask-app .
+
+    - name: Run MySQL container
+      run: |
+        docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=lodesmain@21 -e MYSQL_DATABASE=mlops1 mysql:latest
+
+    - name: Wait for MySQL to start
+      run: sleep 10  # Adjust the sleep duration as needed
+
+    - name: Access MySQL container
+      run: docker exec -it mysql-container mysql -u root -plodesmain@21
+
+    - name: Create 'user' table
+      run: |
+        USE mlops1;
+        CREATE TABLE IF NOT EXISTS user (
+            email VARCHAR(255) NOT NULL,
+            pass VARCHAR(255) NOT NULL,
+            PRIMARY KEY (email)
+        );
+
+    - name: Exit MySQL
+      run: exit
+
+    - name: Restart Flask Application Container
+      run: |
+        docker stop flask-app-container
+        docker rm flask-app-container
+        docker run -d --name flask-app-container --network=mynetwork -p 5000:5000 flask-app
