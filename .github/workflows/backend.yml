@@ -19,7 +19,7 @@ jobs:
         python-version: 3.8
 
     - name: Build Docker image
-      run: docker build -t flask-app .
+      run: docker build -t runtimeterrorss1/ca4:latest .
 
     - name: Run MySQL container
       run: |
