@@ -29,7 +29,9 @@ jobs:
       run: sleep 10  # Adjust the sleep duration as needed
 
     - name: Access MySQL container
-      run: docker exec -it mysql-container mysql -u root -plodesmain@21
+      run: |
+        docker exec -it mysql-container 
+        mysql -u root -p lodesmain@21
 
     - name: Create 'user' table
       run: |
