@@ -1,4 +1,4 @@
-name: Initialize MySQL Database
+name: Build and Push Docker Image
 
 on:
   push:
@@ -23,12 +23,10 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+    
     - name: Build Docker image
       run: docker build -t runtimeterrorss1/ca4:latest .
 
-    - name: Run MySQL container
+    - name: Push Docker image
       run: |
-        docker run -p runtimeterrorss1/ca4:latest
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/ca4:latest
-        
+        docker push runtimeterrorss1/ca4:latest
