@@ -19,6 +19,7 @@ const connection = mysql.createConnection({
   database: "mlopss",
 });
 
+// checking connection
 connection.connect((err) => {
   if (err) {
     console.error("Error connecting to MySQL: " + err.stack);
