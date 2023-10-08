@@ -20,6 +20,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag runtimeterrorss1/CA4:latest
     - name: Push Docker Image
-      run: | 
-      docker login -u runtimeterrorss1 -p runtimeterrors1
-      docker push runtimeterrorss1/CA4:latest
+      run: docker push runtimeterrorss1/CA4:latest
