@@ -1,9 +1,9 @@
-name: Initialize MySQL Database and Run Flask Application
+name: Initialize MySQL Database
 
 on:
   push:
     branches:
-      - i200634  # Specify the branch name you want to trigger the workflow for
+      - i200634 
 
 jobs:
   build:
