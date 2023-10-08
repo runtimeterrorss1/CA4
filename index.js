@@ -11,6 +11,7 @@ app.set("views", __dirname);
 app.use(express.json());
 app.use(cors());
 
+// creating db connection
 const connection = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
