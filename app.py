@@ -9,7 +9,7 @@ CORS(app)
 connection = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
-    port="3306",
+    port="3307",
     password="lodesmain@21",
     database="mlopss"
 )
