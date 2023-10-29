@@ -10,7 +10,7 @@ connection = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
     port="3306",
-    password="12345678",
+    password="lodesmain@21",
     database="mlopss"
 )
 
