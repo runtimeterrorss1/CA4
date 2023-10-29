@@ -2,7 +2,7 @@ version: '3'
 services:
   
   web:
-    image: runtimeterrorss1/ca4-webserver
+    image: runtimeterrorss1/ca4-flaskserver
     ports:
       - "4000:4000"
     volumes:
