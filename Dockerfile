@@ -1,7 +1,10 @@
-FROM mysql:latest
-ENV MYSQL_DATABASE=db1
-ENV MYSQL_USER=user1
-ENV MYSQL_PASSWORD=userpass
-ENV MYSQL_ROOT_PASSWORD=rootpass
-COPY init.sql /docker-entrypoint-initdb.d/
-#lodesmain@21
+FROM mysql
+
+ENV MYSQL_DATABASE=mlopss
+ENV MYSQL_PASSWORD=lodesmain@21
+ENV MYSQL_ROOT_PASSWORD=lodesmain@21
+#
+
+COPY file.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 3307
